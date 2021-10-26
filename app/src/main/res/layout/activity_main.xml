@@ -20,14 +20,16 @@
             android:layout_marginRight="5dp"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="Show Post"/>
+            android:text="Show Post"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/showCommentButton"
             android:layout_marginLeft="5dp"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="Show Comment"/>
+            android:text="Show Comment"
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <TextView

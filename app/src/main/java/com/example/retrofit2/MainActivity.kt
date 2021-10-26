@@ -27,19 +27,9 @@ class MainActivity : AppCompatActivity() {
         showCommentButton = findViewById(R.id.showCommentButton)
 
         showPostButton.setOnClickListener {
-            finish()
-            overridePendingTransition(0, 0);
-            startActivity(getIntent());
-            overridePendingTransition(0, 0);
-
             showPosts()
         }
         showCommentButton.setOnClickListener {
-            finish()
-            overridePendingTransition(0, 0);
-            startActivity(getIntent());
-            overridePendingTransition(0, 0);
-
             showComments()
         }
     }
@@ -61,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<ArrayList<CommentResponse>>, t: Throwable) {
                 responseCodeTextView.text = t.message
             }
-
         })
     }
 
