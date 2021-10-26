@@ -1,6 +1,7 @@
 package com.example.retrofit2
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,14 +14,34 @@ class MainActivity : AppCompatActivity() {
     val list = ArrayList<PostResponse>()
     val commentList = ArrayList<CommentResponse>()
 
+    lateinit var showPostButton: Button
+    lateinit var showCommentButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.title = "Get Post with Retrofit"
+        supportActionBar?.title = "Get Request with Retrofit"
 
-//        showPosts()
-        showComments()
+        showPostButton = findViewById(R.id.showPostButton)
+        showCommentButton = findViewById(R.id.showCommentButton)
+
+        showPostButton.setOnClickListener {
+            finish()
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+
+            showPosts()
+        }
+        showCommentButton.setOnClickListener {
+            finish()
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+
+            showComments()
+        }
     }
 
     private fun showComments() {
